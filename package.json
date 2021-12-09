@@ -15,7 +15,7 @@
     "access": "public"
   },
   "bin": "bin/webapp.js",
-  "types": "types/scripts.d.ts",
+  "types": "types/webapp.d.ts",
   "files": [
     "bin/",
     "types/",
@@ -27,7 +27,7 @@
     "lint": "devkit lint",
     "test": "devkit test",
     "format": "devkit format",
-    "prepare": "devkit hook",
+    "prepare": "devkit prepare",
     "release": "devkit release"
   },
   "dependencies": {
