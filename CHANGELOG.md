@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/akijoey/webapp/compare/v1.0.0...v1.0.1) (2021-12-09)
+
+
+### Bug Fixes
+
+* babel config ([c7ef29a](https://github.com/akijoey/webapp/commit/c7ef29a507e1ac2e4da4e8ba2bd67ecaec7eff2c))
+
 # 1.0.0 (2021-12-03)
 
 
