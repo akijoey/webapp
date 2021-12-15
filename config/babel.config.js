@@ -24,16 +24,6 @@ module.exports = api => {
     plugins: ['@babel/plugin-transform-runtime']
   }
   if (framework === 'react') {
-    config.plugins.push([
-      'babel-plugin-named-asset-import',
-      {
-        loaderMap: {
-          svg: {
-            ReactComponent: '@svgr/webpack?-svgo,+titleProp,+ref![path]'
-          }
-        }
-      }
-    ])
     Object.assign(config, {
       env: {
         development: {

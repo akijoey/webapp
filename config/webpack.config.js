@@ -108,7 +108,7 @@ const config = {
       ...getStyleRules('css', /\.css$/),
       ...getStyleRules('sass', /\.s[ac]ss$/),
       ...getStyleRules('less', /\.less$/),
-      ...getStyleRules('stylus', /\.stylus$/),
+      ...getStyleRules('stylus', /\.styl$/),
       getAssetRule('images', /\.(png|jpe?g|webp|avif|gif|bmp|svg)$/),
       getAssetRule('audios', /\.(mp4|webm|ogg)$/),
       getAssetRule('vedios', /\.(mp3|aac|flac|wav)$/),
