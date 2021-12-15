@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/akijoey/webapp/compare/v1.0.2...v1.0.3) (2021-12-15)
+
+
+### Bug Fixes
+
+* flex bugs ([3b12d53](https://github.com/akijoey/webapp/commit/3b12d53b942b946495277d914b3bd4c50c964776))
+
 ## [1.0.2](https://github.com/akijoey/webapp/compare/v1.0.1...v1.0.2) (2021-12-14)
 
 

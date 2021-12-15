@@ -1,6 +1,6 @@
 {
   "name": "@akijoey/webapp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Common web application build tool.",
   "keywords": [
     "react",
