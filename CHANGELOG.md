@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/akijoey/webapp/compare/v1.0.3...v1.0.4) (2021-12-28)
+
+
+### Bug Fixes
+
+* webpack rules ([5f1c95a](https://github.com/akijoey/webapp/commit/5f1c95ad56c4debf5dc0b33b6f0b702d721d5f51))
+
 ## [1.0.3](https://github.com/akijoey/webapp/compare/v1.0.2...v1.0.3) (2021-12-15)
 
 
