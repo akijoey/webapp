@@ -24,7 +24,7 @@ const getBabelConfig = require('./babel.config')
 const getPostcssConfig = require('./postcss.config')
 
 // get style loaders
-const getStyleLoaders = (style, modules) => {
+const getStyleLoaders = (style, modules = false) => {
   return [
     env === 'development' && 'style-loader',
     env === 'production' && MiniCssExtractPlugin.loader,
@@ -32,7 +32,7 @@ const getStyleLoaders = (style, modules) => {
       loader: 'css-loader',
       options: {
         importLoaders: style === 'css' ? 1 : 2,
-        modules: modules && true
+        modules
       }
     },
     {
@@ -45,20 +45,21 @@ const getStyleLoaders = (style, modules) => {
   ].filter(Boolean)
 }
 
-// get style rules
-const getStyleRules = (style, regexp) => {
-  const string = regexp.toString().slice(1, -1)
-  const moduleRegExp = new RegExp(`\\.module${string}`)
-  return [
-    {
-      test: regexp,
-      use: getStyleLoaders(style)
-    },
-    {
-      test: moduleRegExp,
-      use: getStyleLoaders(style, true)
-    }
-  ]
+// get style rule
+const getStyleRule = (style, regexp) => {
+  const ext = regexp.toString().slice(1, -1)
+  return {
+    oneOf: [
+      {
+        test: regexp,
+        use: getStyleLoaders(style)
+      },
+      {
+        test: new RegExp(`\\.module${ext}`),
+        use: getStyleLoaders(style, true)
+      }
+    ]
+  }
 }
 
 // get asset rule
@@ -91,6 +92,7 @@ const config = {
     }
   },
   module: {
+    strictExportPresence: true,
     rules: [
       webapp.framework === 'vue' && {
         test: /\.vue$/,
@@ -105,14 +107,18 @@ const config = {
         },
         exclude: /node_modules/
       },
-      ...getStyleRules('css', /\.css$/),
-      ...getStyleRules('sass', /\.s[ac]ss$/),
-      ...getStyleRules('less', /\.less$/),
-      ...getStyleRules('stylus', /\.styl$/),
+      getStyleRule('css', /\.css$/),
+      getStyleRule('sass', /\.s[ac]ss$/),
+      getStyleRule('less', /\.less$/),
+      getStyleRule('stylus', /\.styl$/),
       getAssetRule('images', /\.(png|jpe?g|webp|avif|gif|bmp|svg)$/),
       getAssetRule('audios', /\.(mp4|webm|ogg)$/),
       getAssetRule('vedios', /\.(mp3|aac|flac|wav)$/),
-      getAssetRule('fonts', /\.(ttf|otf|woff2?|eot)$/)
+      getAssetRule('fonts', /\.(ttf|otf|woff2?|eot)$/),
+      {
+        resourceQuery: /raw/,
+        type: 'asset/source'
+      }
     ].filter(Boolean)
   },
   plugins: [
