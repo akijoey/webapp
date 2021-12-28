@@ -10,8 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - uses: actions/setup-node@main
-        with:
-          node-version: lts/*
       - run: yarn --frozen-lockfile
       - run: yarn test
       - run: yarn release
