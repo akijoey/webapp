@@ -66,10 +66,18 @@ const getStyleRule = (style, regexp) => {
 const getAssetRule = (asset, regexp) => {
   return {
     test: regexp,
-    type: 'asset',
-    generator: {
-      filename: `${webapp.assetsDir}/${asset}/[name].[contenthash][ext]`
-    }
+    oneOf: [
+      {
+        resourceQuery: /custom/,
+        type: 'javascript/auto'
+      },
+      {
+        type: 'asset',
+        generator: {
+          filename: `${webapp.assetsDir}/${asset}/[name].[contenthash][ext]`
+        }
+      }
+    ]
   }
 }
 
@@ -114,11 +122,7 @@ const config = {
       getAssetRule('images', /\.(png|jpe?g|webp|avif|gif|bmp|svg)$/),
       getAssetRule('audios', /\.(mp4|webm|ogg)$/),
       getAssetRule('vedios', /\.(mp3|aac|flac|wav)$/),
-      getAssetRule('fonts', /\.(ttf|otf|woff2?|eot)$/),
-      {
-        resourceQuery: /raw/,
-        type: 'asset/source'
-      }
+      getAssetRule('fonts', /\.(ttf|otf|woff2?|eot)$/)
     ].filter(Boolean)
   },
   plugins: [

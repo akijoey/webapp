@@ -1,5 +1,3 @@
-/// <reference types="node" />
-
 declare module '*.png' {
   const src: string
   export default src
