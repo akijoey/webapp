@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/akijoey/webapp/compare/v1.0.4...v1.0.5) (2022-01-05)
+
+
+### Bug Fixes
+
+* assets rule ([db70907](https://github.com/akijoey/webapp/commit/db7090712d9f11757abbca2e9a87a9d49127c5a0))
+
 ## [1.0.4](https://github.com/akijoey/webapp/compare/v1.0.3...v1.0.4) (2021-12-28)
 
 
