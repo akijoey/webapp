@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/akijoey/webapp/compare/v1.0.5...v1.0.6) (2022-01-06)
+
+
+### Bug Fixes
+
+* get port ([8490958](https://github.com/akijoey/webapp/commit/8490958c31cf7f86826a414d5186df10bd5426be))
+
 ## [1.0.5](https://github.com/akijoey/webapp/compare/v1.0.4...v1.0.5) (2022-01-05)
 
 
