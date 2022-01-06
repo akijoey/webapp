@@ -1,6 +1,6 @@
 // babel.config.js
 
-const { framework } = require('../lib/config')
+const { framework } = require('../lib/options')
 
 module.exports = api => {
   api && api.cache(true)

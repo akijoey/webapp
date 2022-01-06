@@ -8,8 +8,20 @@ const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 
 process.env.NODE_ENV = 'development'
-const config = require('../config/webpack.config')
-const { host, port } = require('../lib/config')
+const getPort = require('../lib/port')
+const options = require('../lib/options')
+
+const init = async () => {
+  const availablePort = await getPort({
+    host: options.host,
+    from: options.port,
+    to: options.port + 10
+  })
+  if (availablePort) {
+    options.port = availablePort
+  }
+  return require('../config/webpack.config')
+}
 
 // webpack-dev-middleware
 const devMiddleware = (compiler, options) => {
@@ -41,6 +53,7 @@ const hotMiddleware = (compiler, options) => {
 
 async function start() {
   const app = new Koa()
+  const config = await init()
   const compiler = webpack(config)
   app.use(
     devMiddleware(compiler, {
@@ -55,7 +68,7 @@ async function start() {
   )
   // create server
   const server = http.createServer(app.callback())
-  server.listen(parseInt(port), host)
+  server.listen(options.port, options.host)
   // signal handle
   const signals = ['SIGINT', 'SIGTERM']
   signals.forEach(signal => {

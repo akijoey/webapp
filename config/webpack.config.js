@@ -15,7 +15,7 @@ const { VueLoaderPlugin } = require('vue-loader')
 const chalk = require('chalk')
 
 const { exists, resolve, resolveModule } = require('../lib/path')
-const webapp = require('../lib/config')
+const options = require('../lib/options')
 
 const env = process.env.NODE_ENV
 const project = require(resolve('package.json'))
@@ -74,7 +74,7 @@ const getAssetRule = (asset, regexp) => {
       {
         type: 'asset',
         generator: {
-          filename: `${webapp.assetsDir}/${asset}/[name].[contenthash][ext]`
+          filename: `${options.assetsDir}/${asset}/[name].[contenthash][ext]`
         }
       }
     ]
@@ -87,9 +87,9 @@ const config = {
   context: process.cwd(),
   entry: [resolveModule('src/index')],
   output: {
-    publicPath: webapp.publicPath,
-    path: resolve(webapp.outputDir),
-    filename: `${webapp.scriptsDir}/[name].[contenthash].js`,
+    publicPath: options.publicPath,
+    path: resolve(options.outputDir),
+    filename: `${options.scriptsDir}/[name].[contenthash].js`,
     hashSalt: project.name,
     clean: true
   },
@@ -102,7 +102,7 @@ const config = {
   module: {
     strictExportPresence: true,
     rules: [
-      webapp.framework === 'vue' && {
+      options.framework === 'vue' && {
         test: /\.vue$/,
         loader: 'vue-loader'
       },
@@ -132,7 +132,7 @@ const config = {
         {
           react: '#61dafb', // react blue
           vue: '#41b883' // vue green
-        }[webapp.framework] || 'green'
+        }[options.framework] || 'green'
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -142,16 +142,16 @@ const config = {
           },
           context: resolve('public'),
           from: '*',
-          to: resolve(webapp.outputDir),
+          to: resolve(options.outputDir),
           toType: 'dir'
         }
       ]
     }),
     new HtmlWebpackPlugin({
-      filename: webapp.indexPath,
+      filename: options.indexPath,
       template: resolve('public/index.ejs'),
       templateParameters: {
-        PUBLIC_URL: webapp.publicPath.replace(/\/$/, ''),
+        PUBLIC_URL: options.publicPath.replace(/\/$/, ''),
         DOCUMENT_TITLEL: project.name
       },
       minify: env === 'production' && {
@@ -173,7 +173,7 @@ const config = {
         messages: [
           env === 'development' &&
             `Application is running at ${chalk.blueBright.underline(
-              `http://${webapp.host}:${webapp.port}`
+              `http://${options.host}:${options.port}`
             )}`,
           env === 'production' &&
             `Application has been compiled to ${chalk.blueBright.underline(
@@ -182,7 +182,7 @@ const config = {
         ].filter(Boolean)
       }
     }),
-    webapp.framework === 'vue' && new VueLoaderPlugin(),
+    options.framework === 'vue' && new VueLoaderPlugin(),
     exists('tsconfig.json') &&
       new ForkTsCheckerWebpackPlugin({
         typescript: {
@@ -203,7 +203,7 @@ if (env === 'development') {
   config.plugins.push(
     ...[
       new HotModuleReplacementPlugin(),
-      webapp.framework === 'react' && new ReactRefreshWebpackPlugin()
+      options.framework === 'react' && new ReactRefreshWebpackPlugin()
     ].filter(Boolean)
   )
   Object.assign(config, {
@@ -221,8 +221,8 @@ if (env === 'production') {
       raw: true
     }),
     new MiniCssExtractPlugin({
-      filename: `${webapp.stylesDir}/[name].[contenthash].css`,
-      chunkFilename: `${webapp.stylesDir}/[id].[contenthash].css`,
+      filename: `${options.stylesDir}/[name].[contenthash].css`,
+      chunkFilename: `${options.stylesDir}/[id].[contenthash].css`,
       ignoreOrder: false
     }),
     new CompressionWebpackPlugin()
