@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/akijoey/webapp/compare/v1.0.6...v1.0.7) (2022-02-14)
+
+
+### Bug Fixes
+
+* code splitting ([6bdebfa](https://github.com/akijoey/webapp/commit/6bdebfaedc298e16af419ec5795a6ce7ef1419f1))
+
 ## [1.0.6](https://github.com/akijoey/webapp/compare/v1.0.5...v1.0.6) (2022-01-06)
 
 
