@@ -12,8 +12,7 @@ module.exports = () => {
           },
           stage: 3
         }
-      ],
-      'postcss-normalize'
+      ]
     ]
   }
 }

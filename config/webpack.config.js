@@ -148,6 +148,7 @@ const config = {
       ]
     }),
     new HtmlWebpackPlugin({
+      title: project.name,
       filename: options.indexPath,
       template: resolve('public/index.ejs'),
       templateParameters: {
@@ -217,8 +218,9 @@ if (env === 'production') {
   const year = new Date().getFullYear()
   config.plugins.push(
     new BannerPlugin({
-      banner: `/** @license ${project.license} (c) ${year} ${project.author} */`,
-      raw: true
+      banner: `/*! @license ${project.license} (c) ${year} ${project.author} */`,
+      raw: true,
+      exclude: /vendors/
     }),
     new MiniCssExtractPlugin({
       filename: `${options.stylesDir}/[name].[contenthash].css`,
@@ -228,8 +230,25 @@ if (env === 'production') {
     new CompressionWebpackPlugin()
   )
   config.optimization = {
+    splitChunks: {
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'initial',
+          maxInitialSize: 200000
+        }
+      }
+    },
     minimizer: [
-      new TerserWebpackPlugin({ extractComments: false }),
+      new TerserWebpackPlugin({
+        terserOptions: {
+          format: {
+            comments: /^!/
+          }
+        },
+        extractComments: false
+      }),
       new CssMinimizerWebpackPlugin()
     ]
   }
