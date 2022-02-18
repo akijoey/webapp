@@ -236,7 +236,7 @@ if (env === 'production') {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'initial',
-          maxInitialSize: 200000
+          maxInitialSize: 244000
         }
       }
     },
