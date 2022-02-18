@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/akijoey/webapp/compare/v1.0.7...v1.0.8) (2022-02-18)
+
+
+### Bug Fixes
+
+* max initial size ([869f6b4](https://github.com/akijoey/webapp/commit/869f6b44a7a60a6ef7102f896cd95fb5087ccb81))
+
 ## [1.0.7](https://github.com/akijoey/webapp/compare/v1.0.6...v1.0.7) (2022-02-14)
 
 
