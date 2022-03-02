@@ -242,14 +242,12 @@ if (env === 'production') {
     },
     minimizer: [
       new TerserWebpackPlugin({
-        terserOptions: {
-          format: {
-            comments: /^!/
-          }
-        },
+        minify: TerserWebpackPlugin.esbuildMinify,
         extractComments: false
       }),
-      new CssMinimizerWebpackPlugin()
+      new CssMinimizerWebpackPlugin({
+        minify: CssMinimizerWebpackPlugin.esbuildMinify
+      })
     ]
   }
   Object.assign(config, {
