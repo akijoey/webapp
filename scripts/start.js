@@ -1,8 +1,6 @@
 const http = require('http')
 
 const Koa = require('koa')
-const chalk = require('chalk')
-
 const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
@@ -10,6 +8,7 @@ const webpackHotMiddleware = require('webpack-hot-middleware')
 process.env.NODE_ENV = 'development'
 const getPort = require('../lib/port')
 const options = require('../lib/options')
+const logger = require('../lib/logger')
 
 const init = async () => {
   const availablePort = await getPort({
@@ -74,7 +73,7 @@ async function start() {
   signals.forEach(signal => {
     process.on(signal, () => {
       server.close()
-      console.log(chalk.redBright.bold('Server has been closed'))
+      logger.warn('Server has been closed.')
       process.exit()
     })
   })

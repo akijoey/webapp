@@ -4,7 +4,7 @@ const { HotModuleReplacementPlugin, BannerPlugin } = require('webpack')
 const WebpackBar = require('webpackbar')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+const FriendlyErrorsWebpackPlugin = require('@nuxt/friendly-errors-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
@@ -12,7 +12,9 @@ const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
-const chalk = require('chalk')
+
+const { Logger } = require('../lib/logger')
+const logger = new Logger({ prefix: true, raw: true })
 
 const { exists, resolve, resolveModule } = require('../lib/path')
 const options = require('../lib/options')
@@ -173,13 +175,17 @@ const config = {
       compilationSuccessInfo: {
         messages: [
           env === 'development' &&
-            `Application is running at ${chalk.blueBright.underline(
-              `http://${options.host}:${options.port}`
-            )}`,
+            logger.info(
+              `Application is running at ${logger.underline(
+                `http://${options.host}:${options.port}`
+              )}`
+            ),
           env === 'production' &&
-            `Application has been compiled to ${chalk.blueBright.underline(
-              './dist\n'
-            )}`
+            logger.info(
+              `Application has been compiled to ${logger.underline(
+                `./${options.outputDir}`
+              )}`
+            )
         ].filter(Boolean)
       }
     }),
