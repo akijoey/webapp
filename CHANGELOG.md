@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/akijoey/webapp/compare/v1.0.9...v1.1.0) (2022-03-04)
+
+
+### Features
+
+* logger module ([d3ff31e](https://github.com/akijoey/webapp/commit/d3ff31e09d040a50b90ab22c6fbaf4ae8f5ee347))
+
 ## [1.0.9](https://github.com/akijoey/webapp/compare/v1.0.8...v1.0.9) (2022-03-02)
 
 
