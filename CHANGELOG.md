@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/akijoey/webapp/compare/v1.1.0...v1.2.0) (2022-05-23)
+
+
+### Features
+
+* serve script ([d04501f](https://github.com/akijoey/webapp/commit/d04501f4dba389d474b110f9b791a02edc05c4cf))
+
 # [1.1.0](https://github.com/akijoey/webapp/compare/v1.0.9...v1.1.0) (2022-03-04)
 
 
