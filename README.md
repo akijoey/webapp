@@ -21,6 +21,10 @@ Build application.
 
 `$ webapp build`
 
+Provide service.
+
+`$ webapp serve`
+
 ## License
 
 [MIT][license-url] © AkiJoey

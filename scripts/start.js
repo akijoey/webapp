@@ -4,17 +4,17 @@ const Koa = require('koa')
 const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
+const { logger } = require('lognote')
 
 process.env.NODE_ENV = 'development'
 const getPort = require('../lib/port')
 const options = require('../lib/options')
-const logger = require('../lib/logger')
 
 const init = async () => {
   const availablePort = await getPort({
     host: options.host,
     from: options.port,
-    to: options.port + 10
+    to: options.port + 100
   })
   if (availablePort) {
     options.port = availablePort

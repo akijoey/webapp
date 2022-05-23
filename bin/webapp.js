@@ -7,7 +7,7 @@ process.on('unhandledRejection', err => {
   throw err
 })
 
-const scripts = ['start', 'build']
+const scripts = ['start', 'build', 'serve']
 
 const index = args.findIndex(arg => scripts.includes(arg))
 const script = index === -1 ? args[0] : args[index]

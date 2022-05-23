@@ -13,10 +13,8 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
-const { Logger } = require('../lib/logger')
-const logger = new Logger({ prefix: true, raw: true })
-
 const { exists, resolve, resolveModule } = require('../lib/path')
+const { note, newline } = require('../lib/logger')
 const options = require('../lib/options')
 
 const env = process.env.NODE_ENV
@@ -175,16 +173,16 @@ const config = {
       compilationSuccessInfo: {
         messages: [
           env === 'development' &&
-            logger.info(
-              `Application is running at ${logger.underline(
+            note.info(
+              `Application is running at ${note.underline(
                 `http://${options.host}:${options.port}`
-              )}`
+              )}${newline}`
             ),
           env === 'production' &&
-            logger.info(
-              `Application has been compiled to ${logger.underline(
+            note.info(
+              `Application has been compiled to ${note.underline(
                 `./${options.outputDir}`
-              )}`
+              )}${newline}`
             )
         ].filter(Boolean)
       }
