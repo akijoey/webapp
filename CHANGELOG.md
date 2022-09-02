@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/akijoey/webapp/compare/v1.2.0...v1.2.1) (2022-09-02)
+
+
+### Bug Fixes
+
+* upgrade dependencies ([9899514](https://github.com/akijoey/webapp/commit/989951433f838c7d252fd071d8a4b6146ef150fd))
+
 # [1.2.0](https://github.com/akijoey/webapp/compare/v1.1.0...v1.2.0) (2022-05-23)
 
 
