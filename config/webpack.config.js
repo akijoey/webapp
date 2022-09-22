@@ -11,7 +11,6 @@ const TerserWebpackPlugin = require('terser-webpack-plugin')
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
-const { VueLoaderPlugin } = require('vue-loader')
 
 const { exists, resolve, resolveModule } = require('../lib/path')
 const { note, newline } = require('../lib/logger')
@@ -187,7 +186,8 @@ const config = {
         ].filter(Boolean)
       }
     }),
-    options.framework === 'vue' && new VueLoaderPlugin(),
+    options.framework === 'vue' &&
+      new (require('vue-loader').VueLoaderPlugin)(),
     exists('tsconfig.json') &&
       new ForkTsCheckerWebpackPlugin({
         typescript: {
