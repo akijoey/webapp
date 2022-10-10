@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/akijoey/webapp/compare/v1.2.2...v1.2.3) (2022-10-10)
+
+
+### Bug Fixes
+
+* max asset size ([496a8b7](https://github.com/akijoey/webapp/commit/496a8b7eb38864bbf7c8accc321a2bec4ee20f34))
+
 ## [1.2.2](https://github.com/akijoey/webapp/compare/v1.2.1...v1.2.2) (2022-09-22)
 
 
