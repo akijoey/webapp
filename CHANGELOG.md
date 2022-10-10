@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/akijoey/webapp/compare/v1.2.3...v1.2.4) (2022-10-10)
+
+
+### Bug Fixes
+
+* webpack bar plugin ([5be649a](https://github.com/akijoey/webapp/commit/5be649ad811a3cf2be30f7a9344c06dd7ccc7352))
+
 ## [1.2.3](https://github.com/akijoey/webapp/compare/v1.2.2...v1.2.3) (2022-10-10)
 
 
