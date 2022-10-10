@@ -240,9 +240,12 @@ if (env === 'production') {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'initial',
-          maxInitialSize: 244000
+          maxInitialSize: 512000
         }
       }
+    },
+    runtimeChunk: {
+      name: 'runtime'
     },
     minimizer: [
       new TerserWebpackPlugin({
@@ -255,6 +258,10 @@ if (env === 'production') {
     ]
   }
   Object.assign(config, {
+    performance: {
+      maxAssetSize: 512000,
+      maxEntrypointSize: 1024000
+    },
     stats: {
       relatedAssets: true,
       modules: false,
