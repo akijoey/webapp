@@ -22,6 +22,18 @@ const project = require(resolve('package.json'))
 const getBabelConfig = require('./babel.config')
 const getPostcssConfig = require('./postcss.config')
 
+// https://github.com/unjs/webpackbar/pull/93
+class WebpackBarPlugin extends WebpackBar {
+  constructor(options) {
+    super(options)
+    this.handler = (percent, message, ...details) => {
+      if (this.hasRunning) {
+        this.updateProgress(percent, message, details)
+      }
+    }
+  }
+}
+
 // get style loaders
 const getStyleLoaders = (style, modules = false) => {
   return [
@@ -125,7 +137,7 @@ const config = {
     ].filter(Boolean)
   },
   plugins: [
-    new WebpackBar({
+    new WebpackBarPlugin({
       name: project.name,
       color:
         {
