@@ -252,7 +252,8 @@ if (env === 'production') {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'initial',
-          maxInitialSize: 512000
+          maxSize: 500 * 1024,
+          minSize: 100 * 1024
         }
       }
     },
@@ -271,8 +272,8 @@ if (env === 'production') {
   }
   Object.assign(config, {
     performance: {
-      maxAssetSize: 512000,
-      maxEntrypointSize: 1024000
+      maxAssetSize: 500 * 1024,
+      maxEntrypointSize: 1000 * 1024
     },
     stats: {
       relatedAssets: true,
