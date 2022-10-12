@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/akijoey/webapp/compare/v1.2.4...v1.2.5) (2022-10-12)
+
+
+### Bug Fixes
+
+* chunk min size ([fa00b3e](https://github.com/akijoey/webapp/commit/fa00b3e392447a72e3e30deecfdc6e3ce0d50a2d))
+
 ## [1.2.4](https://github.com/akijoey/webapp/compare/v1.2.3...v1.2.4) (2022-10-10)
 
 
