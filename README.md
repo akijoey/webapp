@@ -31,7 +31,7 @@ Provide service.
 
 [npm-image]: https://img.shields.io/npm/v/@akijoey/webapp
 [npm-url]: https://www.npmjs.com/package/@akijoey/webapp
-[build-image]: https://img.shields.io/github/workflow/status/akijoey/webapp/Build
+[build-image]: https://img.shields.io/github/actions/workflow/status/akijoey/webapp/build.yml
 [build-url]: https://github.com/akijoey/webapp/actions/workflows/build.yml
 [coverage-image]: https://img.shields.io/codecov/c/gh/akijoey/webapp
 [coverage-url]: https://codecov.io/gh/akijoey/webapp
