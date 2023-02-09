@@ -1,3 +1,10 @@
+## [1.2.6](https://github.com/akijoey/webapp/compare/v1.2.5...v1.2.6) (2023-02-09)
+
+
+### Bug Fixes
+
+* maintain lockfile ([13ff5a2](https://github.com/akijoey/webapp/commit/13ff5a23abe885c547cba4d17f103237e6802dc4))
+
 ## [1.2.5](https://github.com/akijoey/webapp/compare/v1.2.4...v1.2.5) (2022-10-12)
 
 
