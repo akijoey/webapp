@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/akijoey/webapp/compare/v1.2.6...v1.3.0) (2023-05-10)
+
+
+### Features
+
+* filesystem cache ([f173c38](https://github.com/akijoey/webapp/commit/f173c38d7cd26a5515a130a97f80d142d36ee0d9))
+
 ## [1.2.6](https://github.com/akijoey/webapp/compare/v1.2.5...v1.2.6) (2023-02-09)
 
 
