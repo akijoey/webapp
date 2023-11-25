@@ -100,7 +100,7 @@ const config = {
     type: 'filesystem',
     compression: 'gzip',
     maxAge: 24 * 60 * 60 * 1000
-  }
+  },
   entry: [resolveModule('src/index')],
   output: {
     publicPath: options.publicPath,
