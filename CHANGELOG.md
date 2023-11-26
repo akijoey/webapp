@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/akijoey/webapp/compare/v1.3.1...v1.3.2) (2023-11-26)
+
+
+### Bug Fixes
+
+* upgrade dependencies ([be08d08](https://github.com/akijoey/webapp/commit/be08d080b36b4d62631b702cbd1745aec64d51a5))
+
 ## [1.3.1](https://github.com/akijoey/webapp/compare/v1.3.0...v1.3.1) (2023-11-25)
 
 
