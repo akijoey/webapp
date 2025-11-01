@@ -3612,9 +3612,9 @@ balanced-match@^2.0.0:
   integrity sha512-1ugUSr8BHXRnK23KfuYS+gVMC3LB8QGH9W1iGtDPsNWoQbgtXSExkBu2aDR4epiGWZOjZsj6lDl/N/AqqTC3UA==
 
 baseline-browser-mapping@^2.8.19:
-  version "2.8.22"
-  resolved "https://registry.yarnpkg.com/baseline-browser-mapping/-/baseline-browser-mapping-2.8.22.tgz#9d98661721ebe0812def25858f4cb2561820d2e6"
-  integrity sha512-/tk9kky/d8T8CTXIQYASLyhAxR5VwL3zct1oAoVTaOUHwrmsGnfbRwNdEq+vOl2BN8i3PcDdP0o4Q+jjKQoFbQ==
+  version "2.8.23"
+  resolved "https://registry.yarnpkg.com/baseline-browser-mapping/-/baseline-browser-mapping-2.8.23.tgz#cd43e17eff5cbfb67c92153e7fe856cf6d426421"
+  integrity sha512-616V5YX4bepJFzNyOfce5Fa8fDJMfoxzOIzDCZwaGL8MKVpFrXqfNUoIpRn9YMI5pXf/VKgzjB4htFMsFKKdiQ==
 
 before-after-hook@^2.2.0:
   version "2.2.3"
@@ -7727,9 +7727,9 @@ log-update@^6.1.0:
     wrap-ansi "^9.0.0"
 
 lognote@^1.0.5:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/lognote/-/lognote-1.0.6.tgz#375eb578f2e2334a80f1e526c50ef0a0d8c0c96f"
-  integrity sha512-R2o4nrmYDfGvyHMmEb1il3oku7jrJ0K9DkBzbWuVJtYKeNemwxg+ErbYdqMzTCMApWBY14f1HwyANUTHDekECg==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/lognote/-/lognote-1.1.0.tgz#9634356a43a63842244e58546377e4e62fe69a8e"
+  integrity sha512-lUpIXRNdVku9tO8LcTogyJa2mXiKy9O9wzE1Z9HyoYwwAhdsyz0enjsvuo8jLu2BddVZzAyMf32iNk0EJQ3Psw==
   dependencies:
     chalk "^4.1.2"
 
