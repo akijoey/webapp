@@ -1,3 +1,10 @@
+## [1.3.4](https://github.com/akijoey/webapp/compare/v1.3.3...v1.3.4) (2025-11-01)
+
+
+### Bug Fixes
+
+* update logger preset ([27dbf41](https://github.com/akijoey/webapp/commit/27dbf41384df4ddf55e8a438fd0098a185957d0f))
+
 ## [1.3.3](https://github.com/akijoey/webapp/compare/v1.3.2...v1.3.3) (2024-02-29)
 
 
