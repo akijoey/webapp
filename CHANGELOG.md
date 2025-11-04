@@ -1,3 +1,10 @@
+## [1.3.5](https://github.com/akijoey/webapp/compare/v1.3.4...v1.3.5) (2025-11-04)
+
+
+### Bug Fixes
+
+* babel runtime ([a157ca1](https://github.com/akijoey/webapp/commit/a157ca15a7145db6e35b1c44f058864b9fc1b17b))
+
 ## [1.3.4](https://github.com/akijoey/webapp/compare/v1.3.3...v1.3.4) (2025-11-01)
 
 
